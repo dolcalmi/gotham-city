@@ -53,7 +53,9 @@ pub struct ClientShim {
 
 impl ClientShim {
     pub fn new(endpoint: String, auth_token: Option<String>) -> ClientShim {
+        println!("gotham ClientShim before client creation {}", endpoint.to_string());
         let client = reqwest::Client::new();
+        println!("gotham ClientShim after client creation {}", endpoint.to_string());
         ClientShim {
             client,
             auth_token,
