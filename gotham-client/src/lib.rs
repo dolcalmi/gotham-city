@@ -66,7 +66,7 @@ impl ClientShim {
         let client2 = reqwest::Client::new();
 
         let client = reqwest::Client::new();
-        println!("gotham after client creation");
+        println!("gotham after client creation v2");
         ClientShim {
             client,
             auth_token,
