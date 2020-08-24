@@ -63,7 +63,8 @@ impl ClientShim {
             _ => {}
         }
         println!("gotham after client builder creation");
-
+        let client2 = reqwest::Client::new();
+        println!("gotham after client creation");
 
         let client = reqwest::Client::new();
         ClientShim {
