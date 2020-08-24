@@ -53,6 +53,17 @@ pub struct ClientShim {
 
 impl ClientShim {
     pub fn new(endpoint: String, auth_token: Option<String>) -> ClientShim {
+
+        println!("gotham before1 client builder creation");
+
+        let clientb = reqwest::Client::builder()
+        .gzip(true);
+        match clientb.build() {
+            Err(e) => {println!("{:?}", e);}
+            _ => {}
+        }
+        println!("gotham after client builder creation");
+
         println!("gotham ClientShim before client creation {}", endpoint.to_string());
         let client = reqwest::Client::new();
         println!("gotham ClientShim after client creation {}", endpoint.to_string());
